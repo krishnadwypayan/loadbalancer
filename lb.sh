@@ -1,3 +1,2 @@
-./gradlew clean bootJar
-docker build -t krishnadwypayan/lb .
+#!/bin/bash
 docker run -p 80:8080 krishnadwypayan/lb
