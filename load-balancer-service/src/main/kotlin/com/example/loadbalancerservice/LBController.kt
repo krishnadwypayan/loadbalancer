@@ -1,4 +1,4 @@
-package com.example.loadbalancer
+package com.example.loadbalancerservice
 
 import org.springframework.http.server.reactive.ServerHttpRequest
 import org.springframework.web.bind.annotation.GetMapping

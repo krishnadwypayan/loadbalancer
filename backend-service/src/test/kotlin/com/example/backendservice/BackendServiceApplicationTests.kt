@@ -1,10 +1,10 @@
-package com.example.loadbalancer
+package com.example.backendservice
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class LoadbalancerApplicationTests {
+class BackendServiceApplicationTests {
 
     @Test
     fun contextLoads() {

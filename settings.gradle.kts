@@ -1,4 +1,5 @@
 rootProject.name = "loadbalancer"
+include(":backend-service", ":load-balancer-service")
 
 plugins {
     id("com.gradle.enterprise") version("3.15.1")
