@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine as build
 WORKDIR /workspace/app
 
 COPY gradle gradle
-COPY build.gradle settings.gradle gradlew ./
+COPY build.gradle.kts gradlew ./
 COPY src src
 
 RUN ./gradlew build -x test
