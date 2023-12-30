@@ -6,7 +6,7 @@ COPY build.gradle.kts gradlew ./
 COPY src src
 
 RUN ./gradlew build -x test
-RUN mkdir -p build/libs/dependency && (cd build/libs/dependency; jar -xf ../*.jar)
+RUN mkdir -p build/libs/dependency && (cd build/libs/dependency; jar -xf ../load-balancer-service-0.0.1-SNAPSHOT.jar)
 
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
