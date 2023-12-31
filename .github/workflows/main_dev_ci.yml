@@ -21,8 +21,8 @@ jobs:
       - name: Build and push lb-service
         uses: docker/build-push-action@v5
         with:
-          context: "{{defaultContext}}:load-balancer-service"
-          file: ./Dockerfile
+          context: ./load-balancer-service/
+          file: ./load-balancer-service/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/lb-service:latest
   build-backend-service:
@@ -39,7 +39,7 @@ jobs:
       - name: Build and push backend-service
         uses: docker/build-push-action@v5
         with:
-          context: "{{defaultContext}}:backend-service"
-          file: ./Dockerfile
+          context: ./backend-service/
+          file: ./backend-service/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend-service:latest
