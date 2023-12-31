@@ -1,12 +1,17 @@
-FROM openjdk:17-alpine as build
-USER root
-WORKDIR /builder
-ADD . /builder
+# Start with a base image containing Java runtime
+FROM openjdk:17-alpine-jdk
+
+# Create a directory
+WORKDIR /app
+
+# Copy all the files from the current directory to the image
+COPY . .
+
+# build the project avoiding tests
 RUN ./gradlew clean build
 
-FROM openjdk:17-alpine
-WORKDIR /app
+# Expose port 8080
 EXPOSE 8080
-EXPOSE 9000
-COPY --from=build /builder/build/libs/load-balancer-service-0.0.1-SNAPSHOT.jar .
-CMD ["java", "-jar", "load-balancer-service-0.0.1-SNAPSHOT.jar"]
+
+# Run the jar file
+CMD ["java", "-jar", "./build/libs/load-balancer-service-0.0.1-SNAPSHOT.jar"]
