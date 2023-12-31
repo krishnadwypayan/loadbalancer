@@ -10,9 +10,11 @@ COPY . .
 # build the project avoiding tests
 RUN ./gradlew clean build
 
+COPY ./build/libs/backend-service-0.0.1-SNAPSHOT.jar .
+
 # Expose ports
 EXPOSE 8090
 EXPOSE 9001
 
 # Run the jar file
-CMD ["java", "-jar", "./build/libs/backend-service-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "backend-service-0.0.1-SNAPSHOT.jar"]
