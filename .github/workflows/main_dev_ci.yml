@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  Docker-Build-Push-lb-service:
+  build-lb-service:
     environment: dev
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/lb-service:latest
-  Docker-Build-Push-backend-service:
+  build-backend-service:
     environment: dev
     runs-on: ubuntu-latest
     steps:
