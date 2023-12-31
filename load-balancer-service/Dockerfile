@@ -10,8 +10,9 @@ COPY . .
 # build the project avoiding tests
 RUN ./gradlew clean build
 
-# Expose port 8080
+# Expose ports
 EXPOSE 8080
+EXPOSE 9000
 
 # Run the jar file
 CMD ["java", "-jar", "./build/libs/load-balancer-service-0.0.1-SNAPSHOT.jar"]
