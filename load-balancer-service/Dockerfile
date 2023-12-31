@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime
-FROM openjdk:17-alpine-jdk
+FROM openjdk:17-alpine
 
 # Create a directory
 WORKDIR /app
