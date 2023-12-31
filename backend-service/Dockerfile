@@ -10,7 +10,7 @@ COPY . .
 # build the project avoiding tests
 RUN ./gradlew clean build
 
-COPY ./build/libs/backend-service-0.0.1-SNAPSHOT.jar .
+COPY build/libs/backend-service-0.0.1-SNAPSHOT.jar .
 
 # Expose ports
 EXPOSE 8090
